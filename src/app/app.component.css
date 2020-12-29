@@ -5,6 +5,16 @@
     display: flex;
     justify-content: space-around;
 }
+
+.btn {
+    background-color: #808080;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    
+  }
+
 .counter 
   {
     display: inline-flex;
