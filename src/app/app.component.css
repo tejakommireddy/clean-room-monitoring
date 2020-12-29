@@ -10,25 +10,104 @@
     background-color: #808080;
     border: none;
     color: white;
-    font-size: 18px;
+    font-size: 26px;
     cursor: pointer;
     
   }
-
-.container .card
+.main
 {
-    position: relative;
-    width: 250px;
-    background-color: linear-gradient(0deg,#1b1b1b,#222,#1b1b1b);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 300px;
-    border-radius: 4px;
+  position: relative;
+   width: 1000px;
+   height: 100%; 
+  display: flex;
+  justify-content: space-around;
+}
+.container1
+{
+    height: 54%;
+    width: 33%;
     text-align: center;
-    overflow: hidden;
-    transition: 0.5s;
-    box-shadow: 0px 1px 10px 2px rgba(0,0,0,0.2);
+    display: inline-block;
+    border-radius: 4px;
+    vertical-align: middle;
+    box-shadow:0px 1px 10px 2px rgba(0,0,0,0.2);
+}
+ .container1:first-of-type
+{
+  background-color: white;
+}
+.container1:first-of-type .rail
+{
+  stroke: white;
+}
+.container1:first-of-type .progress
+{
+  stroke: #FFB6C1;
+}
+.container1:nth-of-type(2)
+{
+  background-color: white;
+}
+.container1:nth-of-type(2) .rail
+{
+  stroke: #34495e;
+}
+.container1:nth-of-type(2) .progress
+{
+  stroke: #2E8B57;
+}
+.container1:nth-of-type(3)
+{
+  background-color: white;
+}
+.container1:nth-of-type(3) .rail
+{
+  stroke: #fff;
+}
+.container1:nth-of-type(3) .progress
+{
+  stroke: #800080;
+}
+.gauge-container1
+{
+  display: inline-block;
+  position: relative;
+  width: 70%;
+}
+.gauge-container1 .gauge
+{
+  position: relative;
+  display: block;
+}
+.gauge-container1 .gauge circle
+{
+  stroke-width:15;
+}
+.gauge-container1 .gauge .rail
+{
+  fill: transparent;
+}
+.gauge-container1 .center
+{
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  font-weight: 300;
+  color: white;
+}
+.gauge-container1 .center.percentage
+{
+  font-size: 2vw;
+}
+.gauge-container1 .center.percentSymbol
+{
+  font-size: 0.8em;
+}
+.gauge-container1 .center  .value
+{
+  font-size: 1.9em;
 }
 .container .fourth{
     float: left;
@@ -99,40 +178,6 @@
     font-weight: 700;
     font-size: 40px;
     transition: 00.5s;
-}
-svg
-{
-    position: relative;
-    width:  150px;
-    height: 150px;
-    z-index: 1000;
-}
-svg circle
-{
-    width: 100%;
-    height: 100%;
-    fill: none;
-    stroke: #191919;
-    stroke-width: 10;
-    stroke-linecap: round;
-    transform: translate(5px,5px);
-}
-svg circle:nth-child(2)
-{
-    stroke-dasharray: 220;
-    stroke-dashoffset: 220;
-}
-.card:nth-child(1) svg circle:nth-child(2)
-{
-    stroke: #FFB6C1;
-}
-.card:nth-child(2) svg circle:nth-child(2)
-{
-    stroke: #2E8B57;
-}
-.card:nth-child(3) svg circle:nth-child(2)
-{
-    stroke: #800080;
 }
 table {
     font-family: arial, sans-serif;

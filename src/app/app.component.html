@@ -23,7 +23,6 @@
       color: #808080;
       padding: 0 16px;
       flex-direction: column;
-      font-size: 20px;
       display: inline-block;
 
     }
@@ -43,7 +42,7 @@
       color: white;
       padding: 4px 8px;
       font-size: 14px;
-      margin: 4px 2px;
+      margin: 4px 4px;
       cursor: pointer;
     }
   </style>
@@ -57,61 +56,62 @@
     <button class="btn" style="padding-left: 400px;"><i class="fa fa-home"></i></button>
     <button class="btn"><i class="fa fa-cog "></i></button>
     <button class="btn"><i class='fas fa-sign-out-alt'></i></button>
-   </div>
+  </div>
 
   <div class="second">
     <span class="left-wrapper">
-      <span>Storage Unit</span>
+      <span style="font-size: 20px;">Storage Unit</span>
     </span>
     <span class="right-wrapper">
-      <input style="width: 48%;" type="button" class="button" value="Select and Download Report">
-      <input style="width: 24%;" type="button" class="button" value="Tabular View">
-
-      <input style="width: 23%;" type="button" class="button" value="Storage Unit">
+      <button class="button">Select and Download Report
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <input type="button" class="button" value="Tabular View">
+      <button class="button">Storage Unit
+        <i class="fa fa-caret-down"></i>
+      </button>
 
     </span>
   </div>
 
   <div class="container">
-    <div class="card">
-      <div class="box">
-        <div class="percent">
-          <svg>
-            <circle cx="70" cy="70" r="70"></circle>
-            <circle cx="70" cy="70" r="70"></circle>
+    <div class="main">
+      <div class="container1">
+        <div class="gauge-container1">
+          <svg class="gauge" viewBox = "0 0 150 150">
+            <circle class="rail" r="67" cx="75" cy="75"></circle>
+            <circle class="progress" r="67" data-target="84" cx="75" cy="75"></circle>
           </svg>
-          <div class="number">
-            <h2>10<span>*C</span></h2>
-          </div>
+          <span class="center percentage">
+            <span class="value">10</span>
+            <span class="percentSymbol">°C</span>
+          </span>
         </div>
         <h3>Temperature</h3>
       </div>
-    </div>
-    <div class="card">
-      <div class="b0x">
-        <div class="percent">
-          <svg>
-            <circle cx="70" cy="70" r="70"></circle>
-            <circle cx="70" cy="70" r="70"></circle>
+      <div class="container1">
+        <div class="gauge-container1">
+          <svg class="gauge" viewBox = "0 0 150 150">
+            <circle class="rail" r="67" cx="75" cy="75"></circle>
+            <circle class="progress" r="67" data-target="50" cx="75" cy="75"></circle>
           </svg>
-          <div class="number">
-            <h2>65<span>%</span></h2>
-          </div>
+          <span class="center percentage">
+            <span class="value">65</span>
+            <span class="percentSymbol">%</span>
+          </span>
         </div>
         <h3>Humidity</h3>
       </div>
-    </div>
-
-    <div class="card">
-      <div class="b0x">
-        <div class="percent">
-          <svg>
-            <circle cx="70" cy="70" r="70"></circle>
-            <circle cx="70" cy="70" r="70"></circle>
+      <div class="container1">
+        <div class="gauge-container1">
+          <svg class="gauge" viewBox = "0 0 150 150">
+            <circle class="rail" r="67" cx="75" cy="75"></circle>
+            <circle class="progress" r="67" data-target="75" cx="75" cy="75"></circle>
           </svg>
-          <div class="number">
-            <h2>29<span>atm</span></h2>
-          </div>
+          <span class="center percentage">
+            <span class="value">29</span>
+            <span class="percentSymbol">atm</span>
+          </span>
         </div>
         <h3>Pressure</h3>
       </div>
@@ -119,10 +119,12 @@
     <div class="fourth">
       <div class="max-temp">
         <h3>Max Temperature:</h3>
+        <img src="C:\Users\kommi\Downloads\temp.png" width="30" height="30">
         <span style="color: #FFB6C1;">30*C</span>
       </div>
       <div class="max-humidity">
         <h3>Max Temperature:</h3>
+        <img src="C:/Users/kommi/Downloads/drop.png" width="30" height="30">
         <span style="color: #2E8B57;">65%</span>
       </div>
 
