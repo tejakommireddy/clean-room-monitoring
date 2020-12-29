@@ -1,5 +1,4 @@
 <html>
-
 <head>
   <style>
     .toolbar {
@@ -49,9 +48,9 @@
 </head>
 
 <body>
-  <div class="toolbar">
+  <div mat-table class="toolbar">
     <img width="40" />
-    <span style="padding-left: 600px;">Clean Room Monitoring</span>
+    <span style="padding-left: 600px;">{{title}}</span>
     <button class="btn" style="padding-left: 600px;"><i class="fa fa-home"></i></button>
     <button class="btn"><i class="fa fa-cog "></i></button>
     <button class="btn"><i class='fas fa-sign-out-alt'></i></button>
@@ -82,7 +81,7 @@
             <circle class="progress" r="67" data-target="84" cx="75" cy="75"></circle>
           </svg>
           <span class="center percentage">
-            <span class="value">10</span>
+            <span class="value"> {{dataSource.data[2].max_temparature}}</span>
             <span class="percentSymbol">°C</span>
           </span>
         </div>
@@ -95,7 +94,7 @@
             <circle class="progress" r="67" data-target="50" cx="75" cy="75"></circle>
           </svg>
           <span class="center percentage">
-            <span class="value">65</span>
+            <span class="value">{{dataSource.data[0].humidity}}</span>
             <span class="percentSymbol">%</span>
           </span>
         </div>
@@ -108,7 +107,7 @@
             <circle class="progress" r="67" data-target="75" cx="75" cy="75"></circle>
           </svg>
           <span class="center percentage">
-            <span class="value">29</span>
+            <span class="value">{{dataSource.data[0].pressure}}</span>
             <span class="percentSymbol">atm</span>
           </span>
         </div>
@@ -119,18 +118,18 @@
       <div class="max-temp">
         <h3>Max Temperature:</h3>
         <img src="../assets/temp.png" width="30" height="30">
-        <span style="color: #FFB6C1;">30*C</span>
+        <span style="color: #FFB6C1;">{{dataSource.data[0].max_temparature}}°C</span>
       </div>
       <div class="max-humidity">
         <h3>Max Temperature:</h3>
         <img src="../assets/drop.jpg" width="30" height="30">
-        <span style="color: #2E8B57;">65%</span>
+        <span style="color: #2E8B57;">{{dataSource.data[0].max_humidity}}%</span>
       </div>
 
       <div class="max-pressure">
         <h3>Max Pressure:</h3>
         <img src="../assets/pressure.png" width="30" height="30">
-        <span style="color: #800080;">65atm</span>
+        <span style="color: #800080;">{{dataSource.data[0].max_pressure}}atm</span>
       </div>
     </div>
 
