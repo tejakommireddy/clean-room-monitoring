@@ -37,7 +37,8 @@ export class AppComponent implements OnInit {
       y: element.pressure,
       label: element.date,
     }));
-    var columnChart = new CanvasJS.Chart("columnChartContainer",
+    // @ts-ignore
+    const columnChart = new CanvasJS.Chart("columnChartContainer",
       {
         axisY: {
           interval: 5,
@@ -58,7 +59,8 @@ export class AppComponent implements OnInit {
     columnChart.render();
 
     this.loading = false;
-    var chart = new CanvasJS.Chart("splineChartContainer", {
+    // @ts-ignore
+    const chart = new CanvasJS.Chart("splineChartContainer", {
       theme: "light2",
       animationEnabled: true,
       title: {
@@ -101,7 +103,7 @@ export class AppComponent implements OnInit {
     });
     chart.render();
 
-    function toggleDataSeries(e) {
+    function toggleDataSeries(e:any) {
       if (typeof (e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
         e.dataSeries.visible = false;
       } else {
