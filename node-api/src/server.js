@@ -21,7 +21,6 @@ app.get("/api/monitoring-values", (req, res, next) => {
     const sql = "select * from cleanroom"
     const params = []
     db.all(sql, params, (err, rows) => {
-        console.log("here?")
         if (err) {
           res.status(400).json({"error":err.message});
           return;

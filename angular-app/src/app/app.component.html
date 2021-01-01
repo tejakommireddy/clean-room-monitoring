@@ -74,45 +74,9 @@
 
   <div class="container">
     <div class="main">
-      <div class="container1">
-        <div class="gauge-container1">
-          <svg class="gauge" viewBox="0 0 150 150">
-            <circle class="rail" r="67" cx="75" cy="75"></circle>
-            <circle class="progress" r="67" data-target="84" cx="75" cy="75"></circle>
-          </svg>
-          <span class="center percentage">
-            <span class="value"> {{dataSource.data[2].max_temparature}}</span>
-            <span class="percentSymbol">°C</span>
-          </span>
-        </div>
-        <h3><img src="../assets/temp.png" width="30" height="30">Temperature</h3>
-      </div>
-      <div class="container1">
-        <div class="gauge-container1">
-          <svg class="gauge" viewBox="0 0 150 150">
-            <circle class="rail" r="67" cx="75" cy="75"></circle>
-            <circle class="progress" r="67" data-target="50" cx="75" cy="75"></circle>
-          </svg>
-          <span class="center percentage">
-            <span class="value">{{dataSource.data[0].humidity}}</span>
-            <span class="percentSymbol">%</span>
-          </span>
-        </div>
-        <h3><img src="../assets/drop.jpg" width="30" height="30">Humidity</h3>
-      </div>
-      <div class="container1">
-        <div class="gauge-container1">
-          <svg class="gauge" viewBox="0 0 150 150">
-            <circle class="rail" r="67" cx="75" cy="75"></circle>
-            <circle class="progress" r="67" data-target="75" cx="75" cy="75"></circle>
-          </svg>
-          <span class="center percentage">
-            <span class="value">{{dataSource.data[0].pressure}}</span>
-            <span class="percentSymbol">atm</span>
-          </span>
-        </div>
-        <h3><img src="../assets/pressure.png" width="30" height="30">Pressure</h3>
-      </div>
+      <div id="doughnutchart1" class="container1 gauge-container1 " ></div>
+      <div id="doughnutchart2" class="container1 gauge-container1 " ></div>
+      <div id="doughnutchart3" class="container1 gauge-container1 " ></div>
     </div>
     <div class="fourth">
       <div class="max-temp">
@@ -121,7 +85,7 @@
         <span style="color: #FFB6C1;">{{dataSource.data[0].max_temparature}}°C</span>
       </div>
       <div class="max-humidity">
-        <h3>Max Temperature:</h3>
+        <h3>Max Humidity:</h3>
         <img src="../assets/drop.jpg" width="30" height="30">
         <span style="color: #2E8B57;">{{dataSource.data[0].max_humidity}}%</span>
       </div>

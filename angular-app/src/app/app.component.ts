@@ -2,6 +2,40 @@ import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material';
 import { CleanRoomMonitoringService } from './clean-room-monitoring.service';
 
+
+const convertToHalfDoughnut = (doughnutChart: any) => {
+  let sum = 0;
+  const dataPoints = doughnutChart.options.data[0].dataPoints;
+
+  for (let i = 0; i < dataPoints.length; i++) {
+    sum += dataPoints[i].y;
+  }
+
+  dataPoints.splice(0, 0, { y: sum, color: "transparent", toolTipContent: null, highlightEnabled: false });
+}
+
+const convertToHalfDoughnut1 = (doughnutChart1: any) => {
+  let sum = 0;
+  const dataPoints = doughnutChart1.options.data[0].dataPoints;
+
+  for (let i = 0; i < dataPoints.length; i++) {
+    sum += dataPoints[i].y;
+  }
+
+  dataPoints.splice(0, 0, { y: sum, color: "transparent", toolTipContent: null, highlightEnabled: false });
+}
+
+const convertToHalfDoughnut2 = (doughnutChart2: any) => {
+  let sum = 0;
+  const dataPoints = doughnutChart2.options.data[0].dataPoints;
+
+  for (let i = 0; i < dataPoints.length; i++) {
+    sum += dataPoints[i].y;
+  }
+
+  dataPoints.splice(0, 0, { y: sum, color: "transparent", toolTipContent: null, highlightEnabled: false });
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -18,6 +52,8 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.refresh();
   }
+
+
 
   async refresh() {
     this.loading = true;
@@ -102,8 +138,75 @@ export class AppComponent implements OnInit {
       ]
     });
     chart.render();
+    // @ts-ignore
+    const doughnutChart = new CanvasJS.Chart("doughnutchart1",
+      {
+        title:{
+          text: this.dataSource.data[0].temparature + "°C",
+          fontColor:"#FFB6C1",
+          verticalAlign: "center",
+          dockInsidePlotArea: true
+        },
+        data: [
+          {
+            type: "doughnut",
+            dataPoints: [
+              { y: this.dataSource.data[0].temparature, color: "#FFB6C1" },
+              { y: 100 - this.dataSource.data[0].temparature, color: "grey" }
+            ]
+          }
+        ]
+      });
+    convertToHalfDoughnut(doughnutChart);
+    doughnutChart.render();
 
-    function toggleDataSeries(e:any) {
+    // @ts-ignore
+    const doughnutChart1 = new CanvasJS.Chart("doughnutchart2",
+    {
+      title:{
+        text: this.dataSource.data[0].humidity + "%",
+        fontColor:"#2E8B57",
+        verticalAlign: "center",
+        dockInsidePlotArea: true
+      },
+      data: [
+        {
+          type: "doughnut",
+          dataPoints: [
+            { y: this.dataSource.data[0].humidity, color: "#2E8B57" },
+            { y: 100 - this.dataSource.data[0].humidity, color: "grey" }
+          ]
+        }
+      ]
+    });
+
+  convertToHalfDoughnut1(doughnutChart1);
+  doughnutChart1.render();
+
+  // @ts-ignore
+  const doughnutChart2 = new CanvasJS.Chart("doughnutchart3",
+  {
+    title:{
+      text: this.dataSource.data[0].pressure + "atm",
+      fontColor:"purple",
+      verticalAlign: "center",
+      dockInsidePlotArea: true
+    },
+    data: [
+      {
+        type: "doughnut",
+        dataPoints: [
+          { y: this.dataSource.data[0].pressure, color: "purple" },
+          { y: 100 - this.dataSource.data[0].pressure, color: "grey" }
+        ]
+      }
+    ]
+  });
+
+convertToHalfDoughnut2(doughnutChart2);
+doughnutChart2.render();
+
+    function toggleDataSeries(e: any) {
       if (typeof (e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
         e.dataSeries.visible = false;
       } else {
