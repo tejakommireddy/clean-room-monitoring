@@ -53,8 +53,6 @@ export class AppComponent implements OnInit {
     this.refresh();
   }
 
-
-
   async refresh() {
     this.loading = true;
     const data = await this.cleanRoomMonitoringService.get();
@@ -98,7 +96,7 @@ export class AppComponent implements OnInit {
     // @ts-ignore
     const chart = new CanvasJS.Chart("splineChartContainer", {
       theme: "light2",
-      animationEnabled: true,
+      animationEnabled: true, 
       title: {
         text: ""
       },
